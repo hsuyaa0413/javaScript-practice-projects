@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <h2 class="title">Color Game</h2>
-      <h3 class="color-string">rgb(255, 0, 0)</h3>
+      <h3 class="color-string" data-color-string>rgb(255, 0, 0)</h3>
       <form class="form">
         <fieldset>
           <legend>Format</legend>
@@ -43,7 +43,7 @@
         </fieldset>
       </form>
     </header>
-    <div class="color-grid">
+    <div class="color-grid" data-color-grid>
       <button class="wrong" disabled style="background-color: blue"></button>
       <button disabled style="background-color: red"></button>
       <button class="wrong" disabled style="background-color: green"></button>
@@ -51,7 +51,7 @@
       <button class="wrong" disabled style="background-color: purple"></button>
       <button class="wrong" disabled style="background-color: grey"></button>
     </div>
-    <div class="results">
+    <div class="results" data-results>
       <div>Correct</div>
       <button>Next Color</button>
     </div>
