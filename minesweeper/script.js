@@ -6,7 +6,7 @@ import {
   markTile,
   revealTile,
   checkWin,
-  checkLose
+  checkLose,
 } from "./minesweeper.js"
 
 const BOARD_SIZE = 10
@@ -17,8 +17,8 @@ const boardElement = document.querySelector(".board")
 const minesLeftText = document.querySelector("[data-mine-count]")
 const messageText = document.querySelector(".subtext")
 
-board.forEach((row) => {
-  row.forEach((tile) => {
+board.forEach(row => {
+  row.forEach(tile => {
     boardElement.append(tile.element)
     //left click
     tile.element.addEventListener("click", () => {
@@ -26,7 +26,7 @@ board.forEach((row) => {
       checkGameEnd()
     })
     //right click
-    tile.element.addEventListener("contextmenu", (e) => {
+    tile.element.addEventListener("contextmenu", e => {
       e.preventDefault()
       markTile(tile)
       listMinesLeft()
@@ -40,7 +40,7 @@ minesLeftText.innerText = NUMBER_OF_MINES
 function listMinesLeft() {
   const markedTilesCount = board.reduce((count, row) => {
     return (
-      count + row.filter((tile) => tile.status === TILE_STATUSES.MARKED).length
+      count + row.filter(tile => tile.status === TILE_STATUSES.MARKED).length
     )
   }, 0)
 
@@ -61,8 +61,8 @@ function checkGameEnd() {
   }
   if (lose) {
     messageText.textContent = "Sorry, You've lost."
-    board.forEach((row) => {
-      row.forEach((tile) => {
+    board.forEach(row => {
+      row.forEach(tile => {
         if (tile.status === TILE_STATUSES.MARKED) markTile(tile)
         if (tile.mine) revealTile(board, tile)
       })
