@@ -8,7 +8,7 @@ import {
   checkWin,
   checkLose,
   positionMatch,
-  markedTilesCount
+  markedTilesCount,
 } from "./minesweeper.js"
 
 const BOARD_SIZE = 10
@@ -53,7 +53,7 @@ boardElement.addEventListener("click", e => {
 
   board = revealTile(board, {
     x: parseInt(e.target.dataset.x),
-    y: parseInt(e.target.dataset.y)
+    y: parseInt(e.target.dataset.y),
   })
   render()
 })
@@ -64,7 +64,7 @@ boardElement.addEventListener("contextmenu", e => {
   e.preventDefault()
   board = markTile(board, {
     x: parseInt(e.target.dataset.x),
-    y: parseInt(e.target.dataset.y)
+    y: parseInt(e.target.dataset.y),
   })
   render()
 })
@@ -109,7 +109,7 @@ function getMinePositions(boardSize, numberOfMines) {
   while (positions.length < numberOfMines) {
     const position = {
       x: randomNumber(boardSize),
-      y: randomNumber(boardSize)
+      y: randomNumber(boardSize),
     }
 
     if (!positions.some(positionMatch.bind(null, position))) {

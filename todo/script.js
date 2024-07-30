@@ -2,7 +2,7 @@ const form = document.querySelector("form")
 const list = document.querySelector("#list")
 const input = document.querySelector("#item-input")
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", e => {
   e.preventDefault()
 
   const item = document.createElement("div")

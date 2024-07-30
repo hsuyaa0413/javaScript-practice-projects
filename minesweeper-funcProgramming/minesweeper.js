@@ -6,7 +6,7 @@ export const TILE_STATUSES = {
   HIDDEN: "hidden",
   MINE: "mine",
   NUMBER: "number",
-  MARKED: "marked"
+  MARKED: "marked",
 }
 
 export function createBoard(boardSize, minePositions) {
@@ -16,7 +16,7 @@ export function createBoard(boardSize, minePositions) {
         x,
         y,
         mine: minePositions.some(positionMatch.bind(null, { x, y })),
-        status: TILE_STATUSES.HIDDEN
+        status: TILE_STATUSES.HIDDEN,
       }
     }, boardSize)
   }, boardSize)
